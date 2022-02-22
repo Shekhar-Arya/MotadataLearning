@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This is how to add Jquery link to Html file to use Jquery in Html code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        p{
+            padding: 20px;
+            background-color: khaki;
+            font-size: large;
+            display: none;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $(".zero").fadeTo("fast",0);
+                $(".partial").fadeTo("slow",0.5);
+                $(".full").fadeTo(1000,1);
+            });
+        });
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <button>Fade To</button>
+    <p class="zero">This is 0 opacity</p>
+    <p class="partial">This is partial opacity</p>
+    <p class="full">This is Full opacity</p>
+</body>
+</html>

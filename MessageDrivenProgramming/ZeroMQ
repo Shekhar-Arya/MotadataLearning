@@ -1,0 +1,4 @@
+ZeroMQ is used by installing jar of itin java and for python installing pyzmq.
+
+Details of it is given in:
+https://zeromq.org/get-started/?language=java&library=jeromq#

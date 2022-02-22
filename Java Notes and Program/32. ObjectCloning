@@ -1,0 +1,10 @@
+The object cloning is a way to create exact copy of an object. The clone() method of Object class is used to clone an object.
+
+Student18 s2=(Student18)s1.clone();  Example but this keep in a try block
+
+
+public Object clone()throws CloneNotSupportedException{  //provide this method 
+return super.clone();  
+}  
+
+And class must implements Cloneable interface.

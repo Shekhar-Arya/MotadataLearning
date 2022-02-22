@@ -1,0 +1,62 @@
+
+Java Convert String to int
+We can convert String to an int in java using Integer.parseInt() method. To convert String into Integer, we can use Integer.valueOf() method which returns instance of Integer class.
+
+
+Java Convert int to String
+We can convert int to String in java using String.valueOf() and Integer.toString() methods.
+
+Java String to long
+We can convert String to long in java using Long.parseLong() method.
+
+Java long to String
+We can convert long to String in java using String.valueOf() and Long.toString() methods.
+
+Java String to float
+We can convert String to float in java using Float.parseFloat() method.
+
+Java Convert float to String
+We can convert float to String in java using String.valueOf() and Float.toString() methods.
+
+Java Convert String to double
+We can convert String to double in java using Double.parseDouble() method.
+
+Java Convert double to String
+We can convert double to String in java using String.valueOf() and Double.toString() methods.
+
+Java Convert String to char
+We can convert String to char in java using charAt() method of String class and toCharArray() method.
+
+Java Convert char to String
+We can convert char to String in java using String.valueOf(char) method of String class and Character.toString(char) method of Character class.
+
+Java Convert Object to String
+We can convert Object to String in java using toString() method of Object class or String.valueOf(object) method.
+
+
+Java Convert int to long
+We can convert int to long in java using assignment operator. There is nothing to do extra because lower type can be converted to higher type implicitly.
+
+Java Convert long to int
+We can convert long to int in java using typecasting. To convert higher data type into lower, we need to perform typecasting.
+Typecasting in java is performed through typecast operator (datatype).
+
+Java Convert int to double
+We can convert int to double in java using assignment operator. There is nothing to do extra because lower type can be converted to higher type implicitly.
+
+Java Convert double to int
+We can convert double to int in java using typecasting. To convert double data type into int, we need to perform typecasting.
+
+Java Convert char to int
+We can convert char to int in java using various ways. If we direct assign char variable to int, it will return ASCII value of given character.
+2) Java char to int Example: Character.getNumericValue()
+3) char c='1';  
+int a=Integer.parseInt(String.valueOf(c));  
+
+Java Convert String to boolean
+We can convert String to boolean in java using Boolean.parseBoolean(string) method.
+To convert String into Boolean object, we can use Boolean.valueOf(string) method which returns instance of Boolean class.
+
+Java Convert boolean to String
+We can convert boolean to String in java using String.valueOf(boolean) method.
+Alternatively, we can use Boolean.toString(boolean) method which also converts boolean into String.

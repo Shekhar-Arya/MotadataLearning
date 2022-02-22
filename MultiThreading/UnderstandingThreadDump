@@ -1,0 +1,122 @@
+Thread Dump
+
+=> To genrate the thread dump of the specified process or application we need the pid which is process id associated with the process.
+=> To get the pid of specific Java application we can use the command jps. Which will give the list of pid with respect to specific Java application with its Main class name.
+=> By taking the pid of application we can run jstack command to genrate the Thread dump. Command-> jstack -l <pid>.
+
+Reading the Thread Dump.
+=> First line of the Thread dump is a time stamp of when the dump was genrated, and second line diagonastic information about JVM from which Thread dump was taken.
+
+For Example :-
+2018-06-19 16:44:44
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (10.0.1+10 mixed mode):
+
+=> Next section provides the information about threads that were running at the time of Thread dump. This section contains the list of threads with thier tid value. This threads are non-JVM internal threads(non-VM and non-Garbage Collection(GC)).
+
+For Example :-
+Threads class SMR info:
+_java_thread_list=0x00000250e5488a00, length=13, elements={
+0x00000250e4979000, 0x00000250e4982800, 0x00000250e52f2800, 0x00000250e4992800,
+0x00000250e4995800, 0x00000250e49a5800, 0x00000250e49ae800, 0x00000250e5324000,
+0x00000250e54cd800, 0x00000250e54cf000, 0x00000250e54d1800, 0x00000250e54d2000,
+0x00000250e54d0800
+}
+
+=> And then next is all threads listed with detail information about it.
+
+For Example :- 
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000250e4979000 nid=0x3c28 waiting on condition [0x000000b82a9ff000]
+   java.lang.Thread.State: RUNNABLE
+    at java.lang.ref.Reference.waitForReferencePendingList(java.base@10.0.1/Native Method)
+    at java.lang.ref.Reference.processPendingReferences(java.base@10.0.1/Reference.java:174)
+    at java.lang.ref.Reference.access$000(java.base@10.0.1/Reference.java:44)
+    at java.lang.ref.Reference$ReferenceHandler.run(java.base@10.0.1/Reference.java:138)
+
+   Locked ownable synchronizers:
+    - None
+
+First thing in this thread detail is Thread Name which is human readable name given to the thread either by system or by programmer. In above "Reference Handler" is the name of the Thread.
+
+Second is the unique ID associated with each thread. This number is started with 1. And each time thread object is created this value is increamented by one.
+
+Third is daemon tag if the thread is set daemon then this tag will be displayed here. Daemon thread is low priority thread which runs in background and its lifecycle is based other threads.
+
+Next is prio=10 this indicats the priority of the thread. Note that this priority is not about the priority of the OS thread to which Java thread is mapped to.
+
+Next is os_prio=2 this indiacts the priority of the OS thread to which the Java thread is dispatched.
+
+Next is tid=0x00000250e4979000 (Thread id) this is a unique id given o the thread by JVM.
+
+Next is nid=0x3c28 (Native id) this is unique id given by OS to the thread. This ID can be usefull to extract the information about CPU and memory processing by the particualr thread.
+
+Next is 'waiting on condition' in above which tells us the current status of thread. This is different from the Thread.Status
+it tells us more detaily about the thread status.(i.e. was the thread trying to acquire a lock or waiting on a condition when it blocked)
+
+Next is [0x000000b82a9ff000] this is the last known stack pointer for the stack associated with the Thread. This indicats the last work done or last stack trace added to the stack associated with Thread. 
+
+Here we complete the first line -----------
+
+The next line in stack indicates the current state of the thread. The possible thread states are given as below:
+NEW         -> A newly created thread that has not started yet. It about to start the execution.
+Runnable    -> Either the thread is running or ready for execution but its waiting for resource allocation.
+Blocked     -> Waiting to acquire monitor lock to enter or re-enter a synchronized block or method.
+Waiting     -> Waiting for some other thread to perform particualr action without any time limit, or waiting for some
+               condition to be true. Thread can be in waiting when Thread.join(), Object.wait() or LockSupport.park()
+               methods have been called without any time limit. Or it can also happen when blocked by linked blocking queue.
+Timed-Waiting->Waiting for some other thread to perform some action or to wait till specified time is completed, anything
+               which happens first. If time specified is completed then the thread will resume its waiting. This can be caused
+               by Thread.sleep(),Thread.join(), Object.wait(), .parkNanos(), .parkUntil() this all will wait specified time
+               then they will continue.
+Terminated  -> Thread has completed the execution.
+
+Other than above its also have one more thing which is (parking) which will be associated with Waiting or Timed-Waiting. This indiactes that the thread is waiting for permit. Permit means permission to run the thread. Thread thread will pause its execution until the permit is available. and can manualy caused by park() method.
+
+Here we complete the second line -------
+
+The next section contains the stack trace of thread at the time when thread dump was taken. This stack trace is similar to the trace printed when some errors are occured. This stack trace is very much important as this tells us about where the thread has been stuck and whether the deadlock has occured where it is occured. On what object thread has been blocked and all. Here stack trace denotes the class and line number which the application was running on while the Thread dump was taken.
+
+Last part of the thread is Locked Ownable Synchronizer it contains the object that can be used for synchronization like lock that are exclusively owned by threads.
+
+Here thread detail overview completed ---------------
+
+And then in next section we have JVM internal threads (non-application) that are bound to the OS. Since these threads does not belong to any application they dont have any Thread ID(#1). These threads are usually composed of GC Threads.
+
+For Example :- 
+"VM Thread" os_prio=2 tid=0x00000250e496d800 nid=0x1920 runnable  
+
+"GC Thread#0" os_prio=2 tid=0x00000250c35b5800 nid=0x310c runnable  
+
+"GC Thread#1" os_prio=2 tid=0x00000250c35b8000 nid=0x12b4 runnable  
+
+"GC Thread#2" os_prio=2 tid=0x00000250c35ba800 nid=0x43f8 runnable  
+
+And at last if there is any deadlock condition then we can get the more details about deadlock in last section.
+
+---------------------------
+
+Thread dump is used when application is running or stuck somewhere indefinitly and we want to get the stack trace to find the problem's solution. If application gets terminated by some problem then it will display the stack trace but if the application is not terminating then we have to et mannually stack trace to find the problem.
+
+------------------------------
+Some of the Scenario in Thread Dump.
+
+=> If thread appears to be normal and its states keep showing as Runnable then, then its continously waiting to receive messages from remote server.
+
+=> In a deadlock situation in which several threads running hold a synchronized block on a shared object Thread.State will be Blocked.
+
+=> In thread contention, when a thread is blocked waiting for others to finish. Thread.State will be Waiting.
+
+=> For abnormally high CPU usage we only need to look at RUNNABLE threads. We can use thread dump with other command like 
+top -H -p <pid> this will get each thread and their consumption of OS resources within the process id.
+
+=>  when the processing performance is abnormally low, we'll look at BLOCKED threads.
+
+=> One Thread dump is not enough to understand the situation so it is recommended that we take two or three thread dumps at some time interval.
+
+
+Reference links :-
+https://dzone.com/articles/difference-between-blocked-waiting-timed-waiting-e
+https://dzone.com/articles/how-to-read-a-thread-dump
+https://www.baeldung.com/java-analyze-thread-dumps
+https://dzone.com/articles/how-analyze-java-thread-dumps
+https://www.baeldung.com/java-thread-lifecycle
+

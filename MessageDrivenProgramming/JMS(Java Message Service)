@@ -1,0 +1,45 @@
+Java Message Service (JMS)
+
+=> Java Message Service is an API that supports formal communication called messaging between Computers on Network.
+
+=> JMS provides facility to create, send and receive messages.
+
+=> JMS helps in building the communication between two or more applications in a loosely coupled manner.
+
+=> It means that applications which have to communicate are not connected directly they are connected through common destination like port.
+
+
+(@^@) Why we need JMS :-
+
+=> When one application wants to send message to another application in a such a way that both application dont know about each other; and even they are not running or deployed on same server.
+
+=> In scenario like this Java provides in form of JMS and solve the problem mention above.
+
+=> JSM is also usefull in eventBased application like chat server.
+
+=>* JMS is different then RMI or like Socket programming. It means that destination doesnt need to be online while sendind message. Publisher publish the message and forgets it and receiver comes online, it will fetch the message. This is very powerful solution.
+
+
+(@^@) Benefits of JMS :-
+
+=> Asynchronous :- JMS is by default asynchronous. So to receive message client is not required to be active all time. The message will arrive automatically as the client will become active.
+
+=> Reliable :- JMS provides facility that message will be delivered once and only once.
+
+
+(@^@) JMS Messaging domains :-
+
+=> To main messaging approch are either point-to-point or publish-subscribe approach supported by many messaging products.
+
+=>@ point-to-point messaging :-
+    => point-to-point messaging application is built on basis of message queues,
+       Sender and Receiver.
+    => Each and every message is addressed to particular Queue. Queue store all
+       messages until the message is consumed.
+    => There is only one client for each message.
+    => There is no timimg dependency for sender and receiver of message.
+    => Receiver can fetch the message wether it is running or not when sender sends
+       the message.
+
+=>@ Publish/Subscribe message :-
+    =>  

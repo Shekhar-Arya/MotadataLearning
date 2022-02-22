@@ -1,0 +1,53 @@
+Memory Leaks
+------------
+
+=> Memory leaks is a situation where there are objects present in the heap that are no longer used, but hold references because of which garbage collector is unable to remove those objects from memory and thus unnecessarily maintained. 
+
+=> There are two types of objects that reside in heap memory referenced and unreferenced. Referenced objects are those which still have active references within application and unreferenced objects are those which does not have any active references within application.
+
+=> The garbage collector removes unreferenced objects time to time but it never removes objects that still have active references.
+
+
+Symptoms
+--------
+
+=> Performance degradation when application is continously running for long time.
+=> OutOfMemoryError heap error in application when no space to create and save the objects
+=> Application crashes oftenly.
+=> The application is occationally running out of connection objects.
+
+
+Common Causes of Memory Leaks
+-----------------------------
+
+=> Execive session objects.
+=> Insertion without deletion into Collection objects.
+=> Unbunded caches.
+=> Un-invoked listner methods.
+=> Poorly written custom data structure.
+
+
+Types of memory leaks
+---------------------
+
+=> Static fields :- Execessive usage of static fields can cause memory leaks. Static fields usually remain in memory as long as application is running. To prevent memory leaks minimize the use of static variables.
+
+=> Unclosed Resources :- Resources such as open connections and streams utilize memory. A few examples include database connections, input streams, and session objects. If they are not closed then memory allocated to these resources is blocked and GC is unable to free the space. To prevent memory leaks using unclosed resources always use finaly block to close the resources and that code itself should not contain any exceptions.
+
+=> Improper equals() and hashCode() Implementations :- Not writing proper overriding implementations for equals() and hashcode() methods when creating a new class can potentially lead to memory leaks in Java. Particularly the HashSet and HashMap classes use these methods for many operations, and it is best to carefully write correct implementations of these methods. 
+
+=> Inner Class that references to the Outer Classes :- This happens in case of non-static implementation of inner class.For initialization of inner class we require an instance of outer class. Every non-static Inner class has by default, an implicit reference to its containing class. If we use this inner class objects in our application, then even after Outer class goes out of scope, it will not be garbage collected. However if we declare the inner class as static then this memory leaks can be reduced to none.
+
+=> finalize() method :- Use of finalizer is another surce of potential memory leaks. Whenever a class uses finalize() then the objects of that class are not instatnly garbage collected. Instead of that GC Queue them for finalization, which occures later in time.
+
+=> Interned Strings :- String pool has tranformed from Permanent memory to heap memory after the Java 7. If we read huge String object and call intern() on that object, then it will goes to the string pool which is located in PermGen(Permanent Memory) and will stay there as long as application will run.
+
+=> Using Thread Locals :- Thread Locals variable maintain copy of value for each thread as long as thread is alive. Thread local is supposed to be garbage collected once the holding thread is not alive. But if ThreadLocal is used with Thread Pool which works on the concept of reusing threads then these thread will never dead until thread pool is closed because of which ThreadLocal will also not be garbage collected.
+
+
+Strategies to deal with Memory Leaks 
+------------------------------------
+
+=> Enable Profiling :- By using different tools like JVisualVM we can check the memory leaks
+=> Verbose GC :- By enabling verbose garbage collection (verbose:gc) we can track the detailed trace of the GC.
+=> Use Refrence objects to avoid memory leaks.

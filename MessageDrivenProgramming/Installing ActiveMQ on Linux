@@ -1,0 +1,20 @@
+
+Step 1 : Download ActiveMQ and put it in the library where we want.
+Step 2 : Extract the downloaded file. tar -zxvf <zip or tar file name>
+Step 3 : If activemq script inside bin of ActiveMQ is not exeutable then use : chmod 755 activemq : Command to make it
+         executable.
+Step 4 : (sudo sh activemq start) run command from bin of ActiveMQ this will start the activemq.
+Step 5 : (netstat -an|grep 61616) if this command shows output means activemq is running on default port 61616.
+Step 6 : Visit the link : http://localhost:8161/admin and it will ask for Username and password which is admin and admin.
+
+
+ps aux - command will show all the running processes with process id and all. If used with grep <process name or something> it will show for just that process. Like ps aux | grep activemq.
+
+kill -9 pid - will kill the process running on that pid.
+
+chmod 755 fileORfolderName - This will give read and write access for everyone and also write access for owner of the file.
+chmod 775 fileORfolderName - This will give read write and execute for specific user or group.
+For other chmod commads visit - https://chmodcommand.com/chmod-777/
+
+For Installation ActiveMQ review this website : https://docs.wso2.com/display/BAM200/Installing+Apache+ActiveMQ+on+Linux
+

@@ -1,0 +1,22 @@
+Download NSQ from website
+=> Unzip the file 
+=> set the path in ~/.bashrc file as below:
+export NSQ=/home/shekhar/Shekhar/InstallationApks/nsq-1.2.1.linux-amd64.go1.16.6
+export PATH=$PATH:$NSQ/bin
+
+Open another terminal and run three servers as below:
+nsqlookupd 
+nsqd --lookupd-tcp-address=127.0.0.1:4160 
+nsqadmin --lookupd-http-address=127.0.0.1:4161
+
+Then write the producer-consumer program 
+for java we are using JavaNSQClient library visit its githubrepo for more informations
+
+For UI to check the topic and all use below url after starting all server
+http://127.0.0.1:4171/
+
+
+Refrence links for NSQ
+https://nsq.io/overview/quick_start.html
+https://github.com/brainlag/JavaNSQClient
+https://stackshare.io/stackups/activemq-vs-nsq

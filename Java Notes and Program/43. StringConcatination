@@ -1,0 +1,23 @@
+In Java, String concatenation forms a new String that is the combination of multiple strings. There are two ways to concatenate strings in Java:
+
+By + (String concatenation) operator Example:   String s=50+30+"Sachin"+40+40; 
+ 
+By concat() method                   Example:   String s1="Sachin ";  
+                                                String s2="Tendulkar";  
+                                                String s3=s1.concat(s2);  
+
+1. String concatenation using StringBuilder class   Example:    StringBuilder s1 = new StringBuilder("Hello");    //String 1  
+                                                                StringBuilder s2 = new StringBuilder(" World");    //String 2  
+                                                                StringBuilder s = s1.append(s2);   //String 3 to store the result  
+                                                                System.out.println(s.toString());  //Displays result  
+
+
+2. String concatenation using format() method       Example:    String s1 = new String("Hello");    //String 1  
+                                                                String s2 = new String(" World");    //String 2  
+                                                                String s = String.format("%s%s",s1,s2);   //String 3 to store the result  
+                                                                System.out.println(s.toString());  //Displays result  
+
+3. String concatenation using String.join() method  Example:    String s1 = new String("Hello");    //String 1  
+                                                                String s2 = new String(" World");    //String 2  
+                                                                String s = String.join("",s1,s2);   //String 3 to store the result  
+                                                                System.out.println(s.toString());  //Displays result  

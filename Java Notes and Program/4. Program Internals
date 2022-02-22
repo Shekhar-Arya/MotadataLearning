@@ -1,0 +1,5 @@
+Q) Can you save a Java source file by another name than the class name?
+Yes, if the class is not public.
+
+Q) Can you have multiple classes in a java source file?
+Yes.

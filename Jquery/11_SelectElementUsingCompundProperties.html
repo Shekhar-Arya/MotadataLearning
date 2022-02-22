@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is how to add Jquery link to Html file to use Jquery in Html code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // This will only change the color of ul list li item which has class name class.
+            $("ul li.class").css("background","red");
+        });
+    </script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="class">Hello3</li>
+        <li>Hello2</li>
+        <li>Hello1</li>
+    </ul>
+</body>
+</html>

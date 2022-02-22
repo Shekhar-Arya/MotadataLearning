@@ -1,0 +1,21 @@
+JVisualVM
+
+=> JVisualVM is graphical interface tool for monitoring and managing the Java Application.
+=> Its almost same as the JConsole.
+=> On left side it shows the list of the all running application that we want to monitor. And also show the Option for remote access where we can connect to the remote server and monitor application running on that server.
+=> It contains the 4 tabs:-
+    1. Overview
+    2. Monitor
+    3. Threads
+    4. Sampler
+
+=> 1. Overview section contains the overview like pid(process id unique for all id), hostname, Main class and all. It also contains the jvm arguments and system properties.
+
+=> 2. Monitor section contains the graphs of CPU Usage, Heap and non-Heap memory usage, Class loaded, Threads. It also shows the uptime wich is uptime of JVM.
+It also has the option to perform GC(Garbage Collectoion) manually and also to take the Heap dump by using which we can read in deatil about the memory used by Heap.
+
+=> 3. Thread section contains the Live Threads and Deamon Threads Count, and all thread's state with respect to time. It graphically shows each threads with thier state like green for Running, purple for sleeping, yellow for waiting, orange for park threads, and red for monitor threads. It also shows the option for the Thread dump by using which we can take the thread dump which will help us to study the threads in more details.
+
+=> 4. Sampler section contians two section CPU and Memory. CPU section is used to find out CPU usage by by each thread and also by components of the thread.
+And Memory section is used to find out and display Memory Usage by each class or array and memory used by each by each Threads. In CPU we can take the Thread dump and in memory section we can take the Heap dump and also perform GC.
+

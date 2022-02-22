@@ -1,0 +1,4 @@
+Creating API Document | javadoc tool
+We can create document api in java by the help of javadoc tool. In the java file, we must use the documentation comment /**... */ to post information for the class, method, constructor, fields etc.
+
+

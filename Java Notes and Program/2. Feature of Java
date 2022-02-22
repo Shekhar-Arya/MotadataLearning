@@ -1,0 +1,29 @@
+Simple
+Java is very easy to learn, and its syntax is simple, clean and easy to understand. 
+
+Object Oriented
+Java is an object-oriented programming language. Everything in Java is an object. Object-oriented means we organize our software as a combination of different types of objects that incorporate both data and behavior.
+
+Secured
+Java is best known for its security. With Java, we can develop virus-free systems. Java is secured because:
+
+Classloader: Classloader in Java is a part of the Java Runtime Environment (JRE) which is used to load Java classes into the Java Virtual Machine dynamically. It adds security by separating the package for the classes of the local file system from those that are imported from network sources.
+
+Bytecode Verifier: It checks the code fragments for illegal code that can violate access rights to objects.
+
+Security Manager: It determines what resources a class can access such as reading and writing to the local disk.
+
+
+Robust
+The English mining of Robust is strong. Java is robust because:
+
+It uses strong memory management.
+There is a lack of pointers that avoids security problems.
+Java provides automatic garbage collection which runs on the Java Virtual Machine to get rid of objects which are not being used by a Java application anymore.
+There are exception handling and the type checking mechanism in Java. All these points make Java robust.
+
+
+Platform Independent
+Java is platform independent because it is different from other languages like C, C++, etc. which are compiled into platform specific machines while Java is a write once, run anywhere language. A platform is the hardware or software environment in which a program runs.
+
+

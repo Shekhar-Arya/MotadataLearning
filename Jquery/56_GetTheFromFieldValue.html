@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This is how to add Jquery link to Html file to use Jquery in Html code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".getname").click(function(){
+                var name = $(".name").val();
+                alert(name);
+            });
+            $(".getemail").click(function(){
+                var email = $(".email").val();
+                alert(email)
+            });
+            $(".getcity").click(function(){
+                var city = $(".city").val();
+                alert(city);
+            });
+        });
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Name: <input class="name" type="text"></label>
+    <label for="">Email: <input type="email" class="email"></label>
+    <label for="">City: <select class="city"><option value="London">London</option><option value="China">China</option></select></label>
+    <button class="getname">Get Name</button>
+    <button class="getemail">Get Email</button>
+    <button class="getcity">Get City</button>
+</body>
+</html>

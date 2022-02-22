@@ -1,0 +1,20 @@
+Substring in Java
+A part of String is called substring. In other words, substring is a subset of another String. Java String class provides the built-in substring() method that extract a substring from the given string by using the index values passed as an argument. In case of substring() method startIndex is inclusive and endIndex is exclusive.
+
+Note: Index starts from 0.
+
+You can get substring from the given String object by one of the two methods:
+
+public String substring(int startIndex):
+This method returns new String object containing the substring of the given string from specified startIndex (inclusive). The method throws an IndexOutOfBoundException when the startIndex is larger than the length of String or less than zero.
+
+public String substring(int startIndex, int endIndex):
+This method returns new String object containing the substring of the given string from specified startIndex to endIndex. The method throws an IndexOutOfBoundException when the startIndex is less than zero or startIndex is greater than endIndex or endIndex is greater than length of String.
+In case of String:
+
+startIndex: inclusive
+endIndex: exclusive
+
+
+Using String.split() method:
+The split() method of String class can be used to extract a substring from a sentence. It accepts arguments in the form of a regular expression.

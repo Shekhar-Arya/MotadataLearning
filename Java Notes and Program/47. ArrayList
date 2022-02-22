@@ -1,0 +1,23 @@
+Java ArrayList
+
+Java ArrayList class uses a dynamic array for storing the elements. It is like an array, but there is no size limit. We can add or remove elements anytime. So, it is much more flexible than the traditional array. It is found in the java.util package.
+
+The ArrayList in Java can have the duplicate elements also. It implements the List interface so we can use all the methods of List interface here. The ArrayList maintains the insertion order internally.
+
+The important points about Java ArrayList class are:
+
+Java ArrayList class can contain duplicate elements.
+Java ArrayList class maintains insertion order.
+Java ArrayList class is non synchronized.
+Java ArrayList allows random access because array works at the index basis.
+In ArrayList, manipulation is little bit slower than the LinkedList in Java because a lot of shifting needs to occur if any element is removed from the array list.
+
+Constructors of ArrayList
+Constructor	                            Description
+ArrayList()	                            It is used to build an empty array list.
+ArrayList(Collection<? extends E> c)	It is used to build an array list that is initialized with the elements of the collection c.
+ArrayList(int capacity)	                It is used to build an array list that has the specified initial capacity.
+
+
+/ Example of ArrayList
+ArrayList<String> list=new ArrayList<String>();//creating new generic arraylist  

@@ -1,0 +1,13 @@
+Java StringBuffer Class
+Java StringBuffer class is used to create mutable (modifiable) String objects. The StringBuffer class in Java is the same as String class except it is mutable i.e. it can be changed.
+
+Note: Java StringBuffer class is thread-safe i.e. multiple threads cannot access it simultaneously. So it is safe and will result in an order.
+
+Important Constructors of StringBuffer Class
+
+Constructor	                Description
+StringBuffer()	            It creates an empty String buffer with the initial capacity of 16.
+StringBuffer(String str)	It creates a String buffer with the specified string..
+StringBuffer(int capacity)	It creates an empty String buffer with the specified capacity as length.
+
+

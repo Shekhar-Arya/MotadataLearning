@@ -1,0 +1,38 @@
+Polymorphism in Java
+Polymorphism in Java is a concept by which we can perform a single action in different ways. Polymorphism is derived from 2 Greek words: poly and morphs. The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+
+There are two types of polymorphism in Java: compile-time polymorphism and runtime polymorphism. We can perform polymorphism in java by method overloading and method overriding.
+If you overload a   method in Java, it is the example of compile time polymorphism. Here, we will focus on runtime polymorphism in java.
+
+
+Runtime Polymorphism in Java
+Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time.
+
+In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+Let's first understand the upcasting before Runtime Polymorphism.
+
+Upcasting
+If the reference variable of Parent class refers to the object of Child class, it is known as upcasting. For example:
+
+class A{}  
+class B extends A{}  
+A a=new B();//upcasting  
+
+Java Runtime Polymorphism with Data Member
+A method is overridden, not the data members, so runtime polymorphism can't be achieved by data members.
+
+In the example given below, both the classes have a data member speedlimit. We are accessing the data member by the reference variable of Parent class which refers to the subclass object. Since we are accessing the data member which is not overridden, hence it will access the data member of the Parent class always.
+
+Rule: Runtime polymorphism can't be achieved by data members.
+
+class Bike{  
+ int speedlimit=90;  
+}  
+class Honda3 extends Bike{  
+ int speedlimit=150;  
+  
+ public static void main(String args[]){  
+  Bike obj=new Honda3();  
+  System.out.println(obj.speedlimit);//90  
+}  

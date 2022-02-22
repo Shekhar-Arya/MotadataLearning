@@ -1,0 +1,18 @@
+JMap
+
+=> JMap is Command line based utility used to genrate the heap dump. Which tells the memory used by classes and their instances.
+=> This command can be used as below:
+    1. jmap -clstats <pid> :- it connect to all processes and print class loader statistics
+    2. jmap -finalizerinfo <pid> :- it connect to all processes and print information on objects awaiting finalization.
+    3. jmap -histo[:live] <pid> :- it connect to the processes and prints histogram of java object heap. If live sub-option specified then only count live objects.
+    4. jmap -dump:<dump-option> <pid> :- to connect to processes and take the java heap dump.
+    5. jamp -h :- to get the help for commands
+
+<dump-option>
+
+live :- dump only live objects if not specified then it will dump all objects
+format=b :- it will dump in binary format.
+file=<fileName> :- it will dump to specified file and its compulsory.
+Example: jmap -dump:live,format=b,file=heap.bin <pid>
+
+This heap dump can be read by differnt software utilities like JVisualVM and etc.

@@ -1,0 +1,27 @@
+ String objects are immutable. Immutable simply means unmodifiable or unchangeable.
+Once String object is created its data or state can't be changed but a new String object is created.
+
+class Testimmutablestring{  
+ public static void main(String args[]){  
+   String s="Sachin";  
+   s.concat(" Tendulkar");//concat() method appends the string at the end  
+   System.out.println(s);//will print Sachin because strings are immutable objects  
+ }  
+}  
+
+Output:
+
+Sachin
+
+Above program will not change the String s.
+Because String object Sachin is not modified but new Object of Sachin Tendulkar is Created and the Strin s still points at the Sachin Object.
+
+So we have to do as below:
+s=s.concat(" Tendulkar");  
+
+Why String objects are immutable in Java?
+As Java uses the concept of String literal. Suppose there are 5 reference variables, all refer to one object "Sachin". If one reference variable changes the value of the object, it will be affected by all the reference variables. That is why String objects are immutable in Java.
+
+
+Why String class is Final in Java?
+The reason behind the String class being final is because no one can override the methods of the String class. So that it can provide the same features to the new String objects as well as to the old ones.

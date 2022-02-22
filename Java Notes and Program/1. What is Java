@@ -1,0 +1,27 @@
+
+Java is a programming language. Java is a high level, robust, object-oriented and secure programming language.
+
+Types of Java Applications:-
+
+1. Standalone application
+2. Web Application
+3. Enterprise application
+4. Mobile Application
+
+Java Platforms / Editions
+There are 4 platforms or editions of Java:
+
+1) Java SE (Java Standard Edition)
+It is a Java programming platform. It includes Java programming APIs such as java.lang, java.io, java.net, java.util, java.sql, java.math etc. It includes core topics like OOPs, String, Regex, Exception, Inner classes, Multithreading, I/O Stream, Networking, AWT, Swing, Reflection, Collection, etc.
+
+2) Java EE (Java Enterprise Edition)
+
+3) Java ME (Java Micro Edition)
+It is a micro platform that is dedicated to mobile applications.
+
+4) JavaFX
+It is used to develop rich internet applications. It uses a lightweight user interface API.
+
+
+
+

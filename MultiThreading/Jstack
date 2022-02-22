@@ -1,0 +1,29 @@
+JStack
+
+=> Jstack is command line based utility which is used to genrate the thread dump.
+=> Some of the commands we can use with Jstack are as below:
+    1. jstack [ option ] pid :- this command is used to get thread dump of particualar pid.
+    2. jstack [ option ] executable core :- 
+    3. jstack [ option ] [server-id@]remote-hostname-or-IP :- by this we can get thread dump of the remote host.
+
+=> pid :- is a process id. jps command is used to get all java processes and thier process id. Each process has different pid.
+=> executable :- Java executable from which the core dump was produced.
+=> core :- core file for which the stack trace is to be printed.
+=> remote-hostname-or-IP :- here we have to write either remote hostname or its IP.
+=> server-id :- optional unique id, if multiple debug servers are running on the same remote host.
+
+Options :-
+-l      Long listing. Prints additional information about locks such as list of owned java.util.concurrent ownable synchronizers.
+-F      Force a stack dump when 'jstack [-l] pid' does not respond.
+-m      prints mixed mode (both Java and native C/C++ frames) stack trace.
+-h      for help.
+
+If we want to take the Thread dump and store in some file then we can use following command.
+
+jstack [ option ] pid > fileName.txt -> .txt for storing in txt file
+
+jstack [ option ] pid > fileName.tdump -> .tdump if want to open file in JVisualVM 
+
+and we can open this thread dump file in any software to get proper view.
+
+
